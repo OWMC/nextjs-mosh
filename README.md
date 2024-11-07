@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## Notes
+
+Server components (non interactive server js - builtime or runtime server rendering)
+Client components (interactive browser js) (react apps, CRA SPAs, no seo, extra round trips for data) - runtime client rendering
+
+Use SCs whenever possible.
+
+'use client' will make a component CR. use it atomically.
+
+Static (builtime) vs Dynamic (run/request time) server rendering
+
+Next uses caching on the fetch function (no-store/revalidate every X seconds).
+
+By default Nexjs caches the data => renders the page statically at build time (SSG). If we set no-store, Nextjs sees the page as dynamic, and renders the page serverside at runtime (SSR).
