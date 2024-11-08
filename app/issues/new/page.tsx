@@ -25,13 +25,13 @@ const NewIssuePage = () => {
             {error}
           </Callout.Text>
         </Callout.Root>}
-      <form className='space-y-3' 
-      onSubmit={handleSubmit(async (data) => {
+      <form className='space-y-3' onSubmit={handleSubmit(async (data) => {
         try {
           await axios.post('/api/issues', data);
           router.push('/issues');
         } catch (error) {
           seterror('An unexpected error occured.');
+          throw error; // rethrow the error
         }
       })}>
           <TextField.Root placeholder="Title" {...register('title')}>

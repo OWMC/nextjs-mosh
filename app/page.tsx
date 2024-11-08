@@ -4,7 +4,7 @@ import ProductCard from "./components/ProductCard/ProductCard";
 export default function Home() {
   return (
     <main>
-      <h1>Hello world!</h1>
+      <h1 className="mb-2 font-bold text-xl">Hello world!</h1>
       <p>This webapp demonstrates many things.</p>
       <ul>
         <li>Basic routing in nextJS app-router</li>
