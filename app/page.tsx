@@ -14,14 +14,14 @@ export default function Home() {
         <li>- Hopefully some SSG / SSR WP posts</li>
         <li>- UI libraries: I removed DaisyUIs data-theme=winter from the layout.tsx html tag. RadixUI is used for theming now. TailwindCSS is used for some styling.</li>
       </ul>
-      <div className="mb-4">
-        <ProductCard />
-      </div>
       <p className="mb-2 font-bold ">Tutorial used:</p>
       <ul>
         <li>- https://www.youtube.com/watch?v=ZVnjOPwW4ZA</li>
         <li>- https://www.youtube.com/watch?v=J9sfR6HN6BY</li>
       </ul>
+      <div className="mb-4">
+        <ProductCard />
+      </div>
     </main>
   );
 }
