@@ -15,7 +15,7 @@ const UsersPage = async () => {
   return (
     <>
       <h1 className="mb-2 font-bold text-xl">Users</h1>
-      <p>{new Date().toLocaleTimeString()}</p>
+      <p className="mb-2">Typicode API data fetched and SSRd at {new Date().toLocaleTimeString()}</p>
       <table className='table table-bordered'>
         <thead>
           <tr>
