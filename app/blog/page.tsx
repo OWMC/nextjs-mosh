@@ -17,7 +17,7 @@ export default async function Blog() {
     <main>
       <h1 className="mb-2 font-bold text-xl">Blog</h1>
       <p className="mb-2">WP posts from OWMC.</p>
-      <p className="mb-2">Posts fetched and page SSR'd at runtime. Default NextJS caching (30 seconds?).</p>
+      <p className="mb-2">Posts fetched and page SSR&apos;d at runtime. Default NextJS caching (30 seconds?).</p>
       <hr className="mb-2" />
       {posts.map(post => (
         <h2 key={post.slug}>• {post.title.rendered}</h2>

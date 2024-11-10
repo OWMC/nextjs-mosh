@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from "next/image";
 import React from 'react';
+import globeimg from '../../public/globe.svg';
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
 
@@ -22,7 +23,7 @@ const NavBar = () => {
         <Link href="/">
           <Image
               aria-hidden
-              src='/globe.svg'
+              src={globeimg}
               alt="Globe icon"
               width={16}
               height={16}
