@@ -2,12 +2,20 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Notes
 
-Server components: non interactive server js - buildtime (SSG, most pages) or runtime (SSR, users and blog posts)
+NEXT-DEMO
+
+set up using app-router
+
+Uses Tailwind, Radix, Prisma, Axios, react hook form.
+
+DaisyUI, Bootstrap have been experimented with here also.
+
+Server components: non interactive server js - buildtime (SSG) or runtime (SSR)
 Client components: interactive browser js - runtime - addToCart, new issue form (react apps like SPAs, no seo, extra round trips for data)
 
-Default is static buildtime (ssg) pages. Some components are SSR'd at runtime. 
+Default is static buildtime (ssg) pages. Currently getting the Issues tracker to work requires SSR I think, not SSG. 
 
-'use client' will make a component CR. It is used atomically (on a field or button instance).
+'use client' will make a component CR. It is used atomically (on a field or button instance that depends on remote data).
 
 Next uses caching on the fetch function. If set to no-store, there's no cache and it is SSRd each time. Revalidate every X seconds will store a static cache of an SSR'd page until the time expires and it will fetch new data and re-render.
 

@@ -1,6 +1,13 @@
 import ProductCard from "./components/ProductCard/ProductCard";
 
 export default function Home() {
+  const isServer = typeof window === 'undefined';
+  if (isServer) {
+    console.log("Server-side rendered. typeof window: ", typeof window);
+  } else {
+    console.log("Statically generated. typeof window: ", typeof window);
+  }
+
   return (
     <main>
       <h1 className="mb-2 font-bold text-xl">Hello world!</h1>
