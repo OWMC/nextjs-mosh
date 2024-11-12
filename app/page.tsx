@@ -2,15 +2,18 @@ import ProductCard from "./components/ProductCard/ProductCard";
 
 export default function Home() {
   const isServer = typeof window === 'undefined';
+  let origin:string = "";
   if (isServer) {
-    console.log("Server-side rendered. typeof window: ", typeof window);
+    origin = "Server-side rendered, or statically generated. typeof window: " + typeof window;
   } else {
-    console.log("Statically generated. typeof window: ", typeof window);
+    origin = "Client rendered. typeof window: " + typeof window;
   }
+
 
   return (
     <main>
       <h1 className="mb-2 font-bold text-xl">Hello world!</h1>
+      <p className="mb-2">{origin}</p>
       <p className="mb-2 font-bold">This webapp demonstrates many things.</p>
       <ul className="mb-4">
         <li>- Basic routing in nextJS app-router</li>

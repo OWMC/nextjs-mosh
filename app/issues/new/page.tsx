@@ -18,9 +18,18 @@ const NewIssuePage = () => {
   });
   const [error, seterror] = useState('');
 
+  const isServer = typeof window === 'undefined';
+  let origin:string = "";
+  if (isServer) {
+    origin = "Server-side rendered, or statically generated. typeof window: " + typeof window;
+  } else {
+    origin = "Client rendered. typeof window: " + typeof window;
+  }
+
   return (
     <div className="max-w-xl">
       <h1 className="mb-2 font-bold text-xl">Add new issue</h1>
+      <p className="mb-2">{origin}</p>
       {error && <Callout.Root color="red" className="mb-3">
           <Callout.Text>
             {error}

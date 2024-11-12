@@ -9,6 +9,14 @@ interface Post {
   };
 }
 
+const isServer = typeof window === 'undefined';
+let origin:string = "";
+if (isServer) {
+  origin = "Server-side rendered, or statically generated. typeof window: " + typeof window;
+} else {
+  origin = "Client rendered. typeof window: " + typeof window;
+}
+
 export default async function Blog() {
   const req = await fetch(blogPosts);
   const posts: Post[] = await req.json();
@@ -16,6 +24,7 @@ export default async function Blog() {
   return (
     <main>
       <h1 className="mb-2 font-bold text-xl">Blog</h1>
+      <p className="mb-2">{origin}</p>
       <p className="mb-2">WP posts from OWMC.</p>
       <p className="mb-2">Posts fetched and page SSR&apos;d at runtime. Default NextJS caching (30 seconds?).</p>
       <hr className="mb-2" />
